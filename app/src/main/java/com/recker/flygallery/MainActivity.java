@@ -22,17 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
         mClipViewPagerLL= (ClipViewPagerLayout) findViewById(R.id.mClipViewPagerLL);
         mClipViewPagerLL.mViewPager.setAdapter(new MyPagerAdapter());
-/*        final ClipViewPager viewPager = (ClipViewPager) findViewById(R.id.viewpager);
-        viewPager.setAdapter(new MyPagerAdapter());
-        viewPager.setOffscreenPageLimit(4);
-        viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
-        LinearLayout mll= (LinearLayout) findViewById(R.id.mll);
-        mll.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return viewPager.dispatchTouchEvent(event);
-            }
-        });*/
     }
 
 
