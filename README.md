@@ -5,7 +5,11 @@
 ###DEMO
 ![](images/1.gif)
 thanks to
+
 https://github.com/FlyRecker/FlyGallery
+
 参考
+
 ViewPager系列之ViewPager一屏显示多个子页面
+
 http://blog.csdn.net/jm_beizi/article/details/51297605
