@@ -4,14 +4,15 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
+import android.widget.LinearLayout;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    ClipViewPagerLayout mClipViewPagerLL;
 
 
     @Override
@@ -19,12 +20,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        mClipViewPagerLL= (ClipViewPagerLayout) findViewById(R.id.mClipViewPagerLL);
+        mClipViewPagerLL.mViewPager.setAdapter(new MyPagerAdapter());
+/*        final ClipViewPager viewPager = (ClipViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new MyPagerAdapter());
         viewPager.setOffscreenPageLimit(4);
         viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+        LinearLayout mll= (LinearLayout) findViewById(R.id.mll);
+        mll.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return viewPager.dispatchTouchEvent(event);
+            }
+        });*/
     }
 
 

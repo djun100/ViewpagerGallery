@@ -4,7 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
- * Created by recker on 16/5/11.
+ * Created by wangxuechao on 17/1/22.
  */
 public class ZoomOutPageTransformer implements ViewPager.PageTransformer  {
 
