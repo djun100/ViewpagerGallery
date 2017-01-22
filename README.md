@@ -4,6 +4,7 @@
 
 ###DEMO
 ![](images/1.gif)
+
 thanks to
 
 https://github.com/FlyRecker/FlyGallery
