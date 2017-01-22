@@ -1,4 +1,4 @@
-package com.recker.flygallery;
+package com.cy.sample;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import com.cy.DataStructure.UtilArray;
 import com.cy.DataStructure.UtilList;
 import com.pacific.adapter.PagerAdapterHelper;
 import com.pacific.adapter.ViewPagerAdapter;
+import com.recker.flygallery.ClipViewPagerLayout;
+import com.recker.flygallery.R;
 
 import java.util.ArrayList;
 
