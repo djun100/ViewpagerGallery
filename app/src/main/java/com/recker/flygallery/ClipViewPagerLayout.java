@@ -17,6 +17,8 @@ import android.widget.LinearLayout;
 
 public class ClipViewPagerLayout extends LinearLayout {
     public ClipViewPager mViewPager;
+    private static final int TOPBOTTOM_MARGIN=50;
+    private static final int WIEWPAGER_WIDTH=250;
     public ClipViewPagerLayout(Context context) {
         super(context);
         init();
@@ -42,9 +44,9 @@ public class ClipViewPagerLayout extends LinearLayout {
         mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
 
         LinearLayout.LayoutParams layoutParams=new LinearLayout
-                .LayoutParams((int) dpToPx(250), ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.topMargin= (int) dpToPx(50);
-        layoutParams.bottomMargin= (int) dpToPx(50);
+                .LayoutParams((int) dpToPx(WIEWPAGER_WIDTH), ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.topMargin= (int) dpToPx(TOPBOTTOM_MARGIN);
+        layoutParams.bottomMargin= (int) dpToPx(TOPBOTTOM_MARGIN);
         mViewPager.setLayoutParams(layoutParams);
         mViewPager.setOverScrollMode(ViewPager.OVER_SCROLL_NEVER);
         addView(mViewPager);
