@@ -7,8 +7,11 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewManager;
 import android.widget.LinearLayout;
+
+import com.cy.System.UtilEnv;
+import com.recker.flygallery.ClipViewPager;
+import com.recker.flygallery.ZoomOutPageTransformer;
 
 
 /**
@@ -17,8 +20,8 @@ import android.widget.LinearLayout;
 
 public class ClipViewPagerLayout extends LinearLayout {
     public ClipViewPager mViewPager;
-    private static final int TOPBOTTOM_MARGIN=50;
-    private static final int WIEWPAGER_WIDTH=250;
+    private static final int TOPBOTTOM_MARGIN=0;
+    private static final int WIEWPAGER_WIDTH_MARGIN_EDGE =15;//距离边缘15dp
     public ClipViewPagerLayout(Context context) {
         super(context);
         init();
@@ -42,15 +45,14 @@ public class ClipViewPagerLayout extends LinearLayout {
 //        mViewPager.setAdapter(new MainActivity.MyPagerAdapter());
         mViewPager.setOffscreenPageLimit(4);
         mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
-
-        LinearLayout.LayoutParams layoutParams=new LinearLayout
-                .LayoutParams((int) dpToPx(WIEWPAGER_WIDTH), ViewGroup.LayoutParams.WRAP_CONTENT);
+        float width= UtilEnv.getScreenSize(getContext()).x-2*dpToPx(WIEWPAGER_WIDTH_MARGIN_EDGE);
+        LayoutParams layoutParams=new LayoutParams((int) width, ViewGroup.LayoutParams.WRAP_CONTENT);
         layoutParams.topMargin= (int) dpToPx(TOPBOTTOM_MARGIN);
         layoutParams.bottomMargin= (int) dpToPx(TOPBOTTOM_MARGIN);
         mViewPager.setLayoutParams(layoutParams);
         mViewPager.setOverScrollMode(ViewPager.OVER_SCROLL_NEVER);
         addView(mViewPager);
-        setOnTouchListener(new View.OnTouchListener() {
+        setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 return mViewPager.dispatchTouchEvent(event);
